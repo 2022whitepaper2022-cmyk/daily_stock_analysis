@@ -103,6 +103,10 @@ class TushareFetcher(BaseFetcher):
             
             # 设置 Token
             ts.set_token(config.tushare_token)
+
+             # ！！！【关键添加】设置私有API服务器地址 ！！！
+            ts.set_api_host('http://140.143.243.32:5000/')
+            # 如果上行报错，可以尝试使用：ts.pro.set_api_host('http://140.143.243.32:5000/')
             
             # 获取 API 实例
             self._api = ts.pro_api()
